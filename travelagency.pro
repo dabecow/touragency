@@ -19,12 +19,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     model/guide.cpp \
-    model/place.cpp
+    model/place.cpp \
+    model/tour.cpp
 
 HEADERS += \
     mainwindow.h \
     model/guide.h \
-    model/place.h
+    model/place.h \
+    model/tour.h
 
 FORMS += \
     mainwindow.ui
