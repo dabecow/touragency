@@ -5,7 +5,6 @@
 #include "place.h"
 #include "guide.h"
 #include "QVector"
-#include "QDataStream"
 
 class Tour
 {
@@ -14,9 +13,6 @@ class Tour
     QDate expirationDate;
     Guide guide;
     QVector<Place> places;
-
-    //friend QDataStream& operator<< (QDataStream &out, const Tour &tour);
-    //friend QDataStream& operator>> (QDataStream &in, const Tour &tour);
 
 public:
     Tour():
@@ -51,17 +47,17 @@ public:
     }
 
     bool removePlaceByName(QString n){
-        Place p;
+        int i = -1,
+            index = 0;
+
         foreach(Place value, places){
             if(value.getName() == n){
-                p = value;
+                i = index;
                 break;
             }
+            index++;
         }
-        if ( p.getName() != n ) return false;
-
-        int index = places.indexOf(p);
-        if( !(index >= 0) ) return false;
+        if ( i == -1 ) return false;
 
         places.remove(index);
         return true;
