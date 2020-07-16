@@ -18,10 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    model/guide.cpp \
     model/place.cpp
 
 HEADERS += \
     mainwindow.h \
+    model/guide.h \
     model/place.h
 
 FORMS += \
