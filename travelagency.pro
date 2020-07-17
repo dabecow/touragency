@@ -18,10 +18,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     dao/dao.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    model/guide.cpp \
+    model/place.cpp \
+    model/tour.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    model/guide.h \
+    model/place.h \
+    model/tour.h
 
 FORMS += \
     mainwindow.ui
