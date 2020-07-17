@@ -2,11 +2,16 @@
 #define GUIDE_H
 
 #include "QString"
+#include "QDataStream"
 
 class Guide
 {
     QString name;
     QString phoneNumber;
+
+    friend QDataStream &operator <<(QDataStream &out, Guide *guide);
+    friend QDataStream &operator >>(QDataStream &in, Guide *guide);
+
 public:
     Guide():
         name("guide"),

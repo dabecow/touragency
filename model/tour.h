@@ -5,6 +5,7 @@
 #include "place.h"
 #include "guide.h"
 #include "QVector"
+#include "QDataStream"
 
 class Tour
 {
@@ -13,6 +14,9 @@ class Tour
     QDate expirationDate;
     Guide guide;
     QVector<Place> places;
+
+    friend QDataStream &operator <<(QDataStream &out, Tour *tour);
+    friend QDataStream &operator >>(QDataStream &in, Tour *tour);
 
 public:
     Tour():
@@ -28,19 +32,19 @@ public:
         guide(g),
         places(p) {};
 
-    QString getName() { return name; };
-    QDate getStartDate() { return startDate; };
-    QDate getExpirationDate() { return expirationDate; };
-    Guide getGuide() { return guide; };
-    QVector<Place> getPlaces() { return places; };
+    QString getName()          { return name;           };
+    QDate getStartDate()       { return startDate;      };
+    QDate getExpirationDate()  { return expirationDate; };
+    Guide getGuide()           { return guide;          };
+    QVector<Place> getPlaces() { return places;         };
 
-    void setName(QString n) { name = n; };
-    void setStartDate(QDate d1) { startDate = d1; };
-    void setStartDate(int d, int m, int y) { startDate = QDate(y,m,d); };
-    void setExpirationDate(QDate d2) { expirationDate = d2; };
+    void setName(QString n)                     { name = n;                      };
+    void setStartDate(QDate d1)                 { startDate = d1;                };
+    void setStartDate(int d, int m, int y)      { startDate = QDate(y,m,d);      };
+    void setExpirationDate(QDate d2)            { expirationDate = d2;           };
     void setExpirationDate(int d, int m, int y) { expirationDate = QDate(y,m,d); };
-    void setGuide(Guide g) { guide = g; };
-    void setPlaces(QVector<Place> p) { places = p; };
+    void setGuide(Guide g)                      { guide = g;                     };
+    void setPlaces(QVector<Place> p)            { places = p;                    };
 
     void appendPlace(Place p){
         places.append(p);
