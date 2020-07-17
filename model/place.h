@@ -3,6 +3,7 @@
 
 #include "QString"
 #include "QDate"
+#include "QDataStream"
 
 class Place
 {
@@ -11,6 +12,10 @@ class Place
     QString hotel;
     QDate startDate;
     QDate expirationDate;
+
+    friend QDataStream &operator <<(QDataStream &out, Place *place);
+    friend QDataStream &operator >>(QDataStream &in, Place *place);
+
 public:
     Place():
         name("place"),
