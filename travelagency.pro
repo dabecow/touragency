@@ -22,8 +22,7 @@ SOURCES += \
     model/date.cpp \
     model/guide.cpp \
     model/place.cpp \
-    model/tour.cpp \
-    test.cpp
+    model/tour.cpp
 
 HEADERS += \
     dao.h \
