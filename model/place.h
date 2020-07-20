@@ -1,20 +1,20 @@
 #ifndef PLACE_H
 #define PLACE_H
 
-#include "QString"
-#include "QDate"
-#include "QDataStream"
+#include "date.h"
+#include <string>
+#include <iostream>
 
 class Place
 {
-    QString name;
-    QString address;
-    QString hotel;
-    QDate startDate;
-    QDate expirationDate;
+    std::string name;
+    std::string address;
+    std::string hotel;
+    Date startDate;
+    Date expirationDate;
 
-    friend QDataStream &operator <<(QDataStream &out, Place *place);
-    friend QDataStream &operator >>(QDataStream &in, Place *place);
+    friend std::ostream &operator <<(std::ostream &out, Place *place);
+    friend std::istream &operator >>(std::istream &in, Place *place);
 
 public:
     Place():
@@ -24,26 +24,26 @@ public:
         startDate(2020,1,1),
         expirationDate(2020,1,1) {};
 
-    Place(QString n, QString a, QString h, QDate d1, QDate d2):
-        name(n),
-        address(a),
-        hotel(h),
-        startDate(d1),
-        expirationDate(d2) {};
+    Place(std::string name, std::string address, std::string hotel, Date startDate, Date expDate):
+        name(name),
+        address(address),
+        hotel(hotel),
+        startDate(startDate),
+        expirationDate(expDate) {};
 
-    QString getName() { return name; };
-    QString getAddress() { return address; };
-    QString getHotel() { return hotel; };
-    QDate getStartDate() { return startDate; };
-    QDate getExpirationDate() { return expirationDate; };
+    std::string getName() { return name; };
+    std::string getAddress() { return address; };
+    std::string getHotel() { return hotel; };
+    Date getStartDate() { return startDate; };
+    Date getExpirationDate() { return expirationDate; };
 
-    void setName(QString n) { name = n; };
-    void setAddress(QString a) { address = a; };
-    void setHotel(QString h) { hotel = h; };
-    void setStartDate(QDate d1) { startDate = d1; };
-    void setExpirationDate(QDate d2) { expirationDate = d2; };
-    void setStartDate(int d, int m, int y) { startDate = QDate(y,m,d); };
-    void setExpirationDate(int d, int m, int y) { expirationDate = QDate(y,m,d); };
+    void setName(std::string n) { name = n; };
+    void setAddress(std::string a) { address = a; };
+    void setHotel(std::string h) { hotel = h; };
+    void setStartDate(Date d1) { startDate = d1; };
+    void setExpirationDate(Date d2) { expirationDate = d2; };
+    void setStartDate(int d, int m, int y) { startDate = Date(y,m,d); };
+    void setExpirationDate(int d, int m, int y) { expirationDate = Date(y,m,d); };
 };
 
 #endif // PLACE_H

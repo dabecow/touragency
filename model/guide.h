@@ -1,33 +1,33 @@
 #ifndef GUIDE_H
 #define GUIDE_H
 
-#include "QString"
-#include "QDataStream"
+#include <string>
+#include <iostream>
 
 class Guide
 {
-    QString name;
-    QString phoneNumber;
+    std::string name;
+    std::string phoneNumber;
 
-    friend QDataStream &operator <<(QDataStream &out, Guide *guide);
-    friend QDataStream &operator >>(QDataStream &in, Guide *guide);
+    friend std::ostream &operator <<(std::ostream &out, Guide *guide);
+    friend std::istream &operator >>(std::istream &in, Guide *guide);
 
 public:
     Guide():
         name("guide"),
         phoneNumber("none") {};
-    Guide(QString n):
-        name(n),
+    Guide(std::string name):
+        name(name),
         phoneNumber("none") {};
-    Guide(QString n, QString p):
+    Guide(std::string n, std::string p):
         name(n),
         phoneNumber(p) {};
 
-    QString getName() { return name; };
-    QString getPhoneNumber() { return phoneNumber; };
+    std::string getName() { return name; };
+    std::string getPhoneNumber() { return phoneNumber; };
 
-    void setName(QString n) { name = n; };
-    void setPhoneNumber(QString p) { phoneNumber = p; };
+    void setName(std::string name) { this->name = name; };
+    void setPhoneNumber(std::string phoneNumber) { this->phoneNumber = phoneNumber; };
 };
 
 #endif // GUIDE_H
