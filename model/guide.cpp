@@ -1,13 +1,12 @@
 #include "guide.h"
 
-QDataStream &operator <<(QDataStream &out, Guide *guide){
-    out << guide->name;
-    out << guide->phoneNumber;
-
+std::ostream &operator <<(std::ostream &out, Guide *guide){
+    out << guide->name << '\n';
+    out << guide->phoneNumber << '\n';
     return out;
 }
 
-QDataStream &operator >>(QDataStream &in, Guide *guide){
+std::istream &operator >>(std::istream &in, Guide *guide){
     in >> guide->name;
     in >> guide->phoneNumber;
 

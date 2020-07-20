@@ -19,12 +19,17 @@ SOURCES += \
     dao/dao.cpp \
     main.cpp \
     mainwindow.cpp \
+    model/date.cpp \
     model/guide.cpp \
     model/place.cpp \
-    model/tour.cpp
+    model/tour.cpp \
+    test.cpp
 
 HEADERS += \
+    dao.h \
+    dao/dao.h \
     mainwindow.h \
+    model/date.h \
     model/guide.h \
     model/place.h \
     model/tour.h

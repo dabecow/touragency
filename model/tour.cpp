@@ -1,41 +1,41 @@
 #include "tour.h"
 
-QDataStream &operator <<(QDataStream &out, Tour *tour){
-    QVector<Place> places = tour->getPlaces();
+std::ostream &operator <<(std::ostream &out, Tour *tour){
+    std::vector<Place> places = tour->getPlaces();
     Guide guide = tour->getGuide();
 
-    out << tour->name;
-    out << tour->startDate.day();
-    out << tour->startDate.month();
-    out << tour->startDate.year();
-    out << tour->expirationDate.day();
-    out << tour->expirationDate.month();
-    out << tour->expirationDate.year();
+    out << &tour->startDate;
+    out << &tour->expirationDate;
     out << &guide;
     out << places.size();
 
-    for (int i = 0; i < places.size(); i++){
+    for (size_t i = 0; i < places.size(); i++){
         out << &places[i];
     }
+    out << tour->getName() << "\n";
 
     return out;
 }
 
-QDataStream &operator >>(QDataStream &in, Tour *tour){
-    int d1, d2, m1, m2, y1, y2, cnt;
+std::istream &operator >>(std::istream &in, Tour *tour){
+    int size;
 
-    in >> tour->name;
-    in >> d1 >> m1 >> y1 >> d2 >> m2 >> y2;
-    tour->startDate = QDate(y1, m1, d1);
-    tour->expirationDate = QDate(y2, m2, d2);
+    in >> &tour->startDate;
+    in >> &tour->expirationDate;
     in >> &tour->guide;
-    in >> cnt;
+    in >> size;
 
-    for (int i = 0; i < cnt; i++){
-        Place place;
-        in >> &place;
-        tour->appendPlace(place);
+    for (int i = 0; i < size; i++){
+        Place *place = new Place();
+        in >> place;
+        tour->appendPlace(*place);
     }
-
+    in >> tour->name;
     return in;
+}
+
+
+bool Tour::operator==(const Tour& other) const
+{
+    return this->name == other.name && this->startDate == other.startDate && this->expirationDate == other.expirationDate;
 }

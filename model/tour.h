@@ -1,61 +1,63 @@
 #ifndef TOUR_H
 #define TOUR_H
 
-#include "QString"
+#include "string"
 #include "place.h"
 #include "guide.h"
 #include "QVector"
-#include "QDataStream"
+#include "iostream"
+#include <model/date.h>
 
 class Tour
 {
-    QString name;
-    QDate startDate;
-    QDate expirationDate;
+    std::string name;
+    Date startDate;
+    Date expirationDate;
     Guide guide;
-    QVector<Place> places;
+    std::vector<Place> places;
 
-    friend QDataStream &operator <<(QDataStream &out, Tour *tour);
-    friend QDataStream &operator >>(QDataStream &in, Tour *tour);
+    friend std::ostream &operator <<(std::ostream &out, Tour *tour);
+    friend std::istream &operator >>(std::istream &in, Tour *tour);
 
 public:
+    bool operator==(const Tour& other) const;
     Tour():
         name("tour"),
         startDate(2020,1,1),
         expirationDate(2020,2,2),
         guide(Guide()) {};
 
-    Tour(QString n, QDate d1, QDate d2, Guide g, QVector<Place> p):
-        name(n),
-        startDate(d1),
-        expirationDate(d2),
-        guide(g),
-        places(p) {};
+    Tour(std::string name, Date startDate, Date expDate, Guide guide, std::vector<Place> places):
+        name(name),
+        startDate(startDate),
+        expirationDate(expDate),
+        guide(guide),
+        places(places) {};
 
-    QString getName()          { return name;           };
-    QDate getStartDate()       { return startDate;      };
-    QDate getExpirationDate()  { return expirationDate; };
+    std::string getName()          { return name;           };
+    Date getStartDate()       { return startDate;      };
+    Date getExpirationDate()  { return expirationDate; };
     Guide getGuide()           { return guide;          };
-    QVector<Place> getPlaces() { return places;         };
+    std::vector<Place> getPlaces() { return places;         };
 
-    void setName(QString n)                     { name = n;                      };
-    void setStartDate(QDate d1)                 { startDate = d1;                };
-    void setStartDate(int d, int m, int y)      { startDate = QDate(y,m,d);      };
-    void setExpirationDate(QDate d2)            { expirationDate = d2;           };
-    void setExpirationDate(int d, int m, int y) { expirationDate = QDate(y,m,d); };
-    void setGuide(Guide g)                      { guide = g;                     };
-    void setPlaces(QVector<Place> p)            { places = p;                    };
+    void setName(std::string n)                     { name = n;                 };
+    void setStartDate(Date d1)                 { startDate = d1;                };
+    void setStartDate(int d, int m, int y)      { startDate = Date(y,m,d);      };
+    void setExpirationDate(Date d2)            { expirationDate = d2;           };
+    void setExpirationDate(int d, int m, int y) { expirationDate = Date(y,m,d); };
+    void setGuide(Guide g)                      { guide = g;                    };
+    void setPlaces(std::vector<Place> places)   { this->places = places;        };
 
     void appendPlace(Place p){
-        places.append(p);
+        places.push_back(p);
     }
 
-    bool removePlaceByName(QString n){
+    bool removePlaceByName(std::string name){
         int i = -1,
             index = 0;
 
         foreach(Place value, places){
-            if(value.getName() == n){
+            if(value.getName() == name){
                 i = index;
                 break;
             }
@@ -63,7 +65,7 @@ public:
         }
         if ( i == -1 ) return false;
 
-        places.remove(index);
+        places.erase(places.begin()+index);
         return true;
     }
 
