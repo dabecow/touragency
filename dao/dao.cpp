@@ -48,6 +48,7 @@ std::ostream &operator <<(std::ostream &out, Dao *dao){
         out << &dao->tours.at(i);
     }
     out << std::endl;
+    return out;
 }
 
 std::istream &operator >>(std::istream &in, Dao *dao){

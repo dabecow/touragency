@@ -1,16 +1,15 @@
 #include "place.h"
 
 std::ostream &operator <<(std::ostream &out, Place *place){
-    out << place->name;
-    out << place->address;
-    out << place->hotel;
-    out << place->startDate.getDay();
-    out << place->startDate.getMonth();
-    out << place->startDate.getYear();
-    out << place->expirationDate.getDay();
-    out << place->expirationDate.getMonth();
-    out << place->expirationDate.getYear();
-
+    out << place->name << '\n';
+    out << place->address << '\n';
+    out << place->hotel << '\n';
+    out << place->startDate.getDay() << '\n';
+    out << place->startDate.getMonth() << '\n';
+    out << place->startDate.getYear() << '\n';
+    out << place->expirationDate.getDay() << '\n';
+    out << place->expirationDate.getMonth() << '\n';
+    out << place->expirationDate.getYear() << '\n';
     return out;
 }
 

@@ -18,6 +18,7 @@ public:
     std::vector<Tour> getTours(){
         return tours;
     }
+
     Tour* getTourByRequest(Request request);
     Tour* getTourByRequestHardly(Request request);
     std::vector<Tour> getToursByRequest(Request request);
