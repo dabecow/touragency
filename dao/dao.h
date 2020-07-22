@@ -7,16 +7,22 @@
 class Dao {
 private:
     std::vector<Tour> tours;
+    friend std::ostream &operator <<(std::ostream &out, Dao *dao);
+    friend std::istream &operator >>(std::istream &in, Dao *dao);
 public:
 
     void addTour(Tour &tour);
 
     void deleteTour(Tour &tour);
 
-//    Tour* getTourByRequest(Request request);
+    std::vector<Tour> getTours(){
+        return tours;
+    }
 
-    bool save(std::string filepath);
+    Tour* getTourByRequest(Request request);
+    Tour* getTourByRequestHardly(Request request);
+    std::vector<Tour> getToursByRequest(Request request);
 
-    bool load(std::string filepath);
+
 };
 #endif // DAO_H

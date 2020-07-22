@@ -12,3 +12,8 @@ std::istream &operator >>(std::istream &in, Guide *guide){
 
     return in;
 }
+
+bool Guide::operator==(const Guide& other) const
+{
+    return this->name == other.name || this->phoneNumber == other.phoneNumber;
+}
