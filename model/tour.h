@@ -7,11 +7,11 @@
 #include "QVector"
 #include "iostream"
 #include <model/date.h>
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
+//#include <boost/archive/text_oarchive.hpp>
+//#include <boost/archive/text_iarchive.hpp>
 
 struct Request{
-    friend class boost::serialization::access;
+//    friend class boost::serialization::access;
     std::string name;
     Date startDate;
     Date expirationDate;
@@ -38,7 +38,7 @@ struct Request{
 
 class Tour
 {
-    template<class Archive>
+    /*template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
         {
             // serialize base class information
@@ -48,7 +48,7 @@ class Tour
             ar & expirationDate;
             ar & guide;
             ar & places;
-        }
+        }*/
 
     std::string name;
     Date startDate;

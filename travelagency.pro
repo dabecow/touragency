@@ -45,9 +45,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32-g++ {
-    INCLUDEPATH += C:/boost/boost_mingw_730_64/include/boost-1_73
-}
+#win32-g++ {
+#    INCLUDEPATH += C:/boost/boost_mingw_730_64/include/boost-1_73
+#}
 
 DISTFILES += \
     dao/adsf.txt
