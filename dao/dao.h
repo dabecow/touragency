@@ -7,8 +7,8 @@
 class Dao {
 private:
     std::vector<Tour> tours;
-    friend std::ostream &operator <<(std::ostream &out, Dao *dao);
-    friend std::istream &operator >>(std::istream &in, Dao *dao);
+    friend QDataStream &operator <<(QDataStream &out, Dao *dao);
+    friend QDataStream &operator >>(QDataStream &in, Dao *dao);
 public:
 
     void addTour(Tour &tour);

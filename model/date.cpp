@@ -16,14 +16,14 @@ Date::Date(int day, int month, int year){
 bool Date::operator==(const Date& other) const{
         return (this->day == other.day && this->month && other.month && this->year);
 }
-std::ostream &operator <<(std::ostream &out, Date *date){
-    out << date->day << '\n';
-    out << date->month << '\n';
-    out << date->year << '\n';
+QDataStream &operator <<(QDataStream &out, Date *date){
+    out << date->day;
+    out << date->month;
+    out << date->year;
     return out;
 }
 
-std::istream &operator >>(std::istream &in, Date *date){
+QDataStream &operator >>(QDataStream &in, Date *date){
     in >> date->day;
     in >> date->month;
     in >> date->year;

@@ -46,22 +46,21 @@ void Service::removePlaceFromTour(Request request, std::string placeName){
 }
 
 bool Service::save(std::string filepath){
-    std::ofstream output;
-    output.open(filepath, std::ofstream::ate);
-    if (!output.is_open()) return false;
-//    output << this->dao;
-//    output << std::endl;
-//    output.close();
-    output.write((char*)&this->dao, sizeof(Dao));
-    output.close();
+    QFile file(QString::fromStdString(filepath));
+    if (!file.open(QIODevice::WriteOnly)) return false;
+    QDataStream out(&file);
+    out << this->dao;
+    file.close();
     return true;
 }
 
 bool Service::load(std::string filepath){
-    std::ifstream input;
-    input.open(filepath);
-    if (!input.is_open()) return false;
-    input >> this->dao;
-    input.close();
+    QFile file(QString::fromStdString(filepath));
+    if (!file.open(QIODevice::ReadOnly)) return false;
+    QDataStream in(&file);
+    in >> this->dao;
+    file.close();
     return true;
 }
+
+

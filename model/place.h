@@ -12,9 +12,9 @@ class Place
     std::string hotel;
     Date startDate;
     Date expirationDate;
-
-    friend std::ostream &operator <<(std::ostream &out, Place *place);
-    friend std::istream &operator >>(std::istream &in, Place *place);
+    std::string photoPath;
+    friend QDataStream &operator <<(QDataStream &out, Place *place);
+    friend QDataStream &operator >>(QDataStream &in, Place *place);
 
 public:
     Place():
@@ -30,6 +30,14 @@ public:
         hotel(hotel),
         startDate(startDate),
         expirationDate(expDate) {};
+
+    void setPhotoPath(std::string photoPath){
+        this->photoPath = photoPath;
+    }
+
+    std::string getPhotoPath(){
+        return this->photoPath;
+    }
 
     std::string getName() { return name; };
     std::string getAddress() { return address; };

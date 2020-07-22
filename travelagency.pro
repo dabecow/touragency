@@ -19,23 +19,22 @@ SOURCES += \
     controller/controller.cpp \
     dao/dao.cpp \
     main.cpp \
-    mainwindow.cpp \
     model/date.cpp \
     model/guide.cpp \
     model/place.cpp \
     model/tour.cpp \
-    service/service.cpp
+    service/service.cpp \
+    view/mainwindow.cpp
 
 HEADERS += \
     controller/controller.h \
-    dao.h \
     dao/dao.h \
-    mainwindow.h \
     model/date.h \
     model/guide.h \
     model/place.h \
     model/tour.h \
-    service/service.h
+    service/service.h \
+    view/mainwindow.h
 
 FORMS += \
     mainwindow.ui

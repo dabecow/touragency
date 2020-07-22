@@ -42,16 +42,15 @@ std::vector<Tour> Dao::getToursByRequest(Request request){
     return tmpTours;
 }
 
-std::ostream &operator <<(std::ostream &out, Dao *dao){
-    out << dao->tours.size() << '\n';
+QDataStream &operator <<(QDataStream &out, Dao *dao){
+    out << dao->tours.size();
     for (size_t i = 0; i < dao->tours.size(); i++){
         out << &dao->tours.at(i);
     }
-    out << std::endl;
     return out;
 }
 
-std::istream &operator >>(std::istream &in, Dao *dao){
+QDataStream &operator >>(QDataStream &in, Dao *dao){
     int size;
     in >> size;
     Tour *tour = new Tour();
