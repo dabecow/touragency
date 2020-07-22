@@ -17,32 +17,21 @@ void Dao::deleteTour(Tour& tour){
 //Tour* Dao::getTourByRequest(Request request){
 //        return nullptr;
 //    }
-
-bool Dao::save(std::string filepath){
-            std::ofstream input;
-            input.open(filepath);
-            if (!input.is_open()) return false;
-            input << tours.size() << '\n';
-            for (size_t i = 0; i < tours.size(); i++){
-                input << &tours.at(i);
-            }
-            input << std::endl;
-            input.close();
-            return true;
+std::ostream &operator <<(std::ostream &out, Dao *dao){
+    out << dao->tours.size() << '\n';
+    for (size_t i = 0; i < dao->tours.size(); i++){
+        out << &dao->tours.at(i);
     }
+    out << std::endl;
+}
 
-bool Dao::load(std::string filepath){
-    std::ifstream output;
-    output.open(filepath);
-    if (!output.is_open()) return false;
-
+std::istream &operator >>(std::istream &in, Dao *dao){
     int size;
-    output >> size;
+    in >> size;
     Tour *tour = new Tour();
     for (int i = 0; i < size; i++){
-        output >> tour;
-        tours.push_back(*tour);
+        in >> tour;
+        dao->tours.push_back(*tour);
     }
-    output.close();
-    return true;
+    return in;
 }
