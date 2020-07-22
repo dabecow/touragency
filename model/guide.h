@@ -28,6 +28,7 @@ public:
 
     void setName(std::string name) { this->name = name; };
     void setPhoneNumber(std::string phoneNumber) { this->phoneNumber = phoneNumber; };
+    bool operator==(const Guide& other) const;
 };
 
 #endif // GUIDE_H

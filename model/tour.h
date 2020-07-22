@@ -8,6 +8,31 @@
 #include "iostream"
 #include <model/date.h>
 
+struct Request{
+    std::string name;
+    Date startDate;
+    Date expirationDate;
+    Guide guide;
+    Request(std::string name){
+        this->name = name;
+    }
+    Request(std::string name, Date startDate){
+        this->name = name;
+        this->startDate = startDate;
+    }
+    Request(std::string name, Date startDate, Date expirationDate){
+        this->name = name;
+        this->startDate = startDate;
+        this->expirationDate = expirationDate;
+    }
+    Request(std::string name, Date startDate, Date expirationDate, Guide guide){
+        this->name = name;
+        this->startDate = startDate;
+        this->expirationDate = expirationDate;
+        this->guide = guide;
+    }
+};
+
 class Tour
 {
     std::string name;

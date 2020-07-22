@@ -18,11 +18,10 @@ public:
     std::vector<Tour> getTours(){
         return tours;
     }
-//    Tour* getTourByRequest(Request request);
+    Tour* getTourByRequest(Request request);
+    Tour* getTourByRequestHardly(Request request);
+    std::vector<Tour> getToursByRequest(Request request);
 
-//    bool save(std::string filepath);
-
-//    bool load(std::string filepath);
 
 };
 #endif // DAO_H
