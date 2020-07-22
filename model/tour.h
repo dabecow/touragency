@@ -7,6 +7,7 @@
 #include "QVector"
 #include "iostream"
 #include <model/date.h>
+#include "QDataStream"
 //#include <boost/archive/text_oarchive.hpp>
 //#include <boost/archive/text_iarchive.hpp>
 
@@ -16,6 +17,7 @@ struct Request{
     Date startDate;
     Date expirationDate;
     Guide guide;
+
     Request(std::string name){
         this->name = name;
     }
@@ -55,12 +57,21 @@ class Tour
     Date expirationDate;
     Guide guide;
     std::vector<Place> places;
-
-    friend std::ostream &operator <<(std::ostream &out, Tour *tour);
-    friend std::istream &operator >>(std::istream &in, Tour *tour);
+    std::string photoPath;
+    friend QDataStream &operator <<(QDataStream &out, Tour *tour);
+    friend QDataStream &operator >>(QDataStream &in, Tour *tour);
 
 public:
     bool operator==(const Tour& other) const;
+
+    void setPhotoPath(std::string photoPath){
+        this->photoPath = photoPath;
+    }
+
+    std::string getPhotoPath(){
+        return this->photoPath;
+    }
+
     Tour():
         name("tour"),
         startDate(2020,1,1),

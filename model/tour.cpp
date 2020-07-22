@@ -1,6 +1,6 @@
 #include "tour.h"
 
-std::ostream &operator <<(std::ostream &out, Tour *tour){
+QDataStream &operator <<(QDataStream &out, Tour *tour){
     std::vector<Place> places = tour->getPlaces();
     Guide guide = tour->getGuide();
 
@@ -12,14 +12,15 @@ std::ostream &operator <<(std::ostream &out, Tour *tour){
     for (size_t i = 0; i < places.size(); i++){
         out << &places[i];
     }
-    out << tour->getName() << "\n";
 
+    out << QString::fromStdString(tour->getName());
+    out << QString::fromStdString(tour->photoPath);
     return out;
 }
 
-std::istream &operator >>(std::istream &in, Tour *tour){
+QDataStream &operator >>(QDataStream &in, Tour *tour){
     int size;
-
+    QString name, photoPath;
     in >> &tour->startDate;
     in >> &tour->expirationDate;
     in >> &tour->guide;
@@ -30,7 +31,10 @@ std::istream &operator >>(std::istream &in, Tour *tour){
         in >> place;
         tour->appendPlace(*place);
     }
-    in >> tour->name;
+    in >> name;
+    tour->name = name.toStdString();
+    in >> photoPath;
+    tour->photoPath = photoPath.toStdString();
     return in;
 }
 

@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "view/mainwindow.h"
 #include "dao/dao.h"
 #include "service/service.h"
 #include <QApplication>
@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-
+//qDebug() << "it's alive!!!!!!";
 
 //    Dao *dao = new Dao();
 
@@ -31,7 +31,8 @@ int main(int argc, char *argv[])
 //    Dao* dao1 = new Dao();
 //    Service *service1 = new Service(*dao1);
 
-//    service1->load("C:\\Users\\antom\\OneDrive\\Desktop\\text.txt");
-//    std::cout << "";
+//    if(!service1->load("C:\\Users\\antom\\OneDrive\\Desktop\\text.txt"))
+//        qDebug() << "An error occured";
+//    qDebug() << "it's alive!!!!!!";
     return a.exec();
 }

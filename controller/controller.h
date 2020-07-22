@@ -1,6 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 #include "dao/dao.h"
+
 class Controller{
     Dao *dao;
 public:

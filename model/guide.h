@@ -2,15 +2,15 @@
 #define GUIDE_H
 
 #include <string>
-#include <iostream>
+#include "QDataStream"
 
 class Guide
 {
     std::string name;
     std::string phoneNumber;
 
-    friend std::ostream &operator <<(std::ostream &out, Guide *guide);
-    friend std::istream &operator >>(std::istream &in, Guide *guide);
+    friend QDataStream &operator <<(QDataStream &out, Guide *guide);
+    friend QDataStream &operator >>(QDataStream &in, Guide *guide);
 
 public:
     Guide():

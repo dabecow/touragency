@@ -1,14 +1,20 @@
 #include "guide.h"
 
-std::ostream &operator <<(std::ostream &out, Guide *guide){
-    out << guide->name << '\n';
-    out << guide->phoneNumber << '\n';
+QDataStream &operator <<(QDataStream &out, Guide *guide){
+    out << QString::fromStdString(guide->name);
+    out << QString::fromStdString(guide->phoneNumber);
     return out;
 }
 
-std::istream &operator >>(std::istream &in, Guide *guide){
-    in >> guide->name;
-    in >> guide->phoneNumber;
+QDataStream &operator >>(QDataStream &in, Guide *guide){
+    QString name;
+    QString phoneNumber;
+    in >> name;
+    in >> phoneNumber;
+    guide->name = name.toStdString();
+    guide->phoneNumber = phoneNumber.toStdString();
+//    in >> guide->name;
+//    in >> guide->phoneNumber;
 
     return in;
 }
