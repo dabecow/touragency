@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/"/>
+    <qresource prefix="/new/icons">
+        <file>no_photo.png</file>
+        <file>dottour.png</file>
+        <file>to4ka.png</file>
+        <file>close-symbol-png-1.png</file>
+        <file>search-13-512.png</file>
+        <file>reset.png</file>
+        <file>diskette.png</file>
+        <file>icons8-close-window-96.png</file>
+        <file>icons8-happy-file-96.png</file>
+    </qresource>
+</RCC>

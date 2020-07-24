@@ -8,11 +8,8 @@
 #include "iostream"
 #include <model/date.h>
 #include "QDataStream"
-//#include <boost/archive/text_oarchive.hpp>
-//#include <boost/archive/text_iarchive.hpp>
 
 struct Request{
-//    friend class boost::serialization::access;
     std::string name;
     Date startDate;
     Date expirationDate;
@@ -85,6 +82,13 @@ public:
         guide(guide),
         places(places) {};
 
+    Tour(std::string name, Date startDate, Date expDate, std::string guideName, std::string guidePhone, std::vector<Place> places):
+        name(name),
+        startDate(startDate),
+        expirationDate(expDate),
+        guide(Guide(guideName, guidePhone)),
+        places(places) {};
+
     Tour(std::string name, Date startDate, Date expDate, Guide guide):
         name(name),
         startDate(startDate),
@@ -97,6 +101,7 @@ public:
     Guide getGuide()           { return guide;          };
     std::vector<Place> getPlaces() { return places;         };
 
+    Place* getPlaceByIndex(int index)                  {return &this->places.at(index);}
     void setName(std::string n)                     { name = n;                 };
     void setStartDate(Date d1)                 { startDate = d1;                };
     void setStartDate(int d, int m, int y)      { startDate = Date(y,m,d);      };

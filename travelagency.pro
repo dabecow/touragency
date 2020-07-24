@@ -50,3 +50,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     dao/adsf.txt
+
+RESOURCES += \
+    resources.qrc

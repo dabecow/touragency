@@ -13,9 +13,6 @@ QDataStream &operator >>(QDataStream &in, Guide *guide){
     in >> phoneNumber;
     guide->name = name.toStdString();
     guide->phoneNumber = phoneNumber.toStdString();
-//    in >> guide->name;
-//    in >> guide->phoneNumber;
-
     return in;
 }
 

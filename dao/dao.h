@@ -19,9 +19,12 @@ public:
         return tours;
     }
 
+    void deleteTourByIndex(int index);
+    Tour* getTourByIndex(int index);
     Tour* getTourByRequest(Request request);
     Tour* getTourByRequestHardly(Request request);
     std::vector<Tour> getToursByRequest(Request request);
+    std::vector<Tour> getToursByRequestHardly(Request request);
 
 
 };

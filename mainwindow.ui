@@ -6,628 +6,1372 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1031</width>
-    <height>600</height>
+    <width>1148</width>
+    <height>830</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1031</width>
-    <height>572</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1031</width>
-    <height>600</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-color: rgb(244, 242, 219);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="addButton">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>540</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Добавить</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="deleteButton">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>540</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Удалить</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>30</y>
-      <width>1031</width>
-      <height>501</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QGroupBox" name="tourBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="title">
-        <string/>
-       </property>
-       <widget class="QTableView" name="placesViewTable">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>140</y>
-          <width>341</width>
-          <height>221</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="tourPhoto">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>10</y>
-          <width>131</width>
-          <height>121</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QLabel" name="tourName">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>10</y>
-          <width>181</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>181</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>имя</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="uselessGuideLabel">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>40</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Гид:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="guideLabel">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>50</y>
-          <width>191</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>имя</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="guidePhoneViewLabel">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>70</y>
-          <width>181</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>телефон</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="tourStartDateView">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>100</y>
-          <width>71</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Даты:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="tourStartViewLabel">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>120</y>
-          <width>101</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>хх.хх.хх - хх.хх.хх</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="placePhotoViewLabel">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>370</y>
-          <width>131</width>
-          <height>121</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>380</y>
-          <width>191</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Имя</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>400</y>
-          <width>191</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Адрес</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>420</y>
-          <width>191</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Отель</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>440</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Даты:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>450</y>
-          <width>191</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>хх.хх.хх - хх.хх.хх</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTableView" name="tourTable"/>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="addBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>339</width>
-         <height>489</height>
-        </size>
-       </property>
-       <property name="title">
-        <string/>
-       </property>
-       <widget class="QTableView" name="addPlacesTable">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>320</y>
-          <width>341</width>
-          <height>121</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="tourNameLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Имя тура</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="guideNameLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>51</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Имя гида</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>450</y>
-          <width>191</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Добавить тур</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="guidePhoneLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>61</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Номер гида</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="startDateLabel">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>70</y>
-          <width>71</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Дата начала</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="expDateLabel">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>90</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Дата окончания</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="tourNameEdit">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>10</y>
-          <width>271</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="guideNameEdit">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>30</y>
-          <width>271</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="guidePhoneEdit">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>50</y>
-          <width>261</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="placesLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>160</y>
-          <width>101</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Места посещения</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="placeNameEdit">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>180</y>
-          <width>271</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="placeNameLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>180</y>
-          <width>61</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Название</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="hotelLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>200</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Отель</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="hotelNameEdit">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>200</y>
-          <width>271</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="addressLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Адрес</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="addressNameEdit">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>220</y>
-          <width>271</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="tourPhotoButton">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>120</y>
-          <width>81</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Фото</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="tourPhotoLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>120</y>
-          <width>171</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Файл не выбран</string>
-        </property>
-       </widget>
-       <widget class="QDateEdit" name="tourStartDate">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>70</y>
-          <width>81</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QDateEdit" name="tourExpDate">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>90</y>
-          <width>81</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="placePhotoButton">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>240</y>
-          <width>81</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Фото</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="placePhotoLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>240</y>
-          <width>171</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Файл не выбран</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="expDateLabel_2">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>290</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Дата окончания</string>
-        </property>
-       </widget>
-       <widget class="QDateEdit" name="placeStartDate">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>270</y>
-          <width>81</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QDateEdit" name="placeExpDate">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>290</y>
-          <width>81</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="startDateLabel_2">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>270</y>
-          <width>71</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Дата начала</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>270</y>
-          <width>111</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Добавить место</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout_13">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_12">
+        <item>
+         <widget class="QLabel" name="logoLabel">
+          <property name="minimumSize">
+           <size>
+            <width>481</width>
+            <height>71</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>481</width>
+            <height>71</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/new/icons/dottour.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>531</width>
+            <height>71</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>531</width>
+            <height>71</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox { 
+     border: 2px solid; 
+	 border-radius: 0px;
+ } </string>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <widget class="QWidget" name="">
+           <property name="geometry">
+            <rect>
+             <x>6</x>
+             <y>10</y>
+             <width>521</width>
+             <height>58</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="styleSheet">
+                 <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                </property>
+                <property name="text">
+                 <string>Имя тура</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="tourSearchNameEdit">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                </property>
+                <property name="text">
+                 <string>Имя тура</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="styleSheet">
+                 <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                </property>
+                <property name="text">
+                 <string>Дата начала</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateEdit" name="tourSearchStartDate">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="styleSheet">
+                 <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                </property>
+                <property name="text">
+                 <string>Дата окончания</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateEdit" name="tourSearchExpDate">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="hardlyCheckBox">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(16, 0, 0);
+padding: 3px;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+              </property>
+              <property name="text">
+               <string>СТРОГИЙ ПОИСК</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="searchResetButton">
+              <property name="minimumSize">
+               <size>
+                <width>31</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>31</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 2px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="searchButton">
+              <property name="minimumSize">
+               <size>
+                <width>31</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>31</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 2px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QGroupBox" name="tourBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>669</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>11111</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox { 
+     border: 2px solid; 
+	 border-radius: 0px;
+ } </string>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="tourPhotoEditLabel">
+                 <property name="text">
+                  <string>fdsa</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QLabel" name="tourNameEditLabel">
+                   <property name="maximumSize">
+                    <size>
+                     <width>181</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Имя тура</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(16, 0, 0);</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="uselessGuideLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(124, 124, 108);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Гид:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="guideNameEditLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Имя гида</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="guidePhoneEditLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Телефон гида</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_2">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(16, 0, 0);</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="tourStartDateView">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(124, 124, 108);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Даты:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="tourDatesEditLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>хх.хх.хх - хх.хх.хх</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="placesViewTable">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(165, 153, 137)
+</string>
+               </property>
+               <column>
+                <property name="text">
+                 <string>Фото</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Название</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QLabel" name="placePhotoViewLabel">
+                 <property name="text">
+                  <string>qerww</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="Line" name="line_6">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <item>
+                  <widget class="QLabel" name="placeNameEditLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Имя</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_3">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(16, 0, 0);</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="placeAddressEditLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Адрес</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_4">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(16, 0, 0);</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="placeHotelEditLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Отель</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_5">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(16, 0, 0);</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="datesUselessLabel">
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(124, 124, 108);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Даты:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QLabel" name="placeDateEditLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>143</width>
+                     <height>29</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>29</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>хх.хх.хх - хх.хх.хх</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item alignment="Qt::AlignBottom">
+                <widget class="QPushButton" name="closeTourBoxButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>21</width>
+                   <height>21</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>21</width>
+                   <height>21</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+	 border: none;
+}
+
+QPushButton:hover{
+	border: 3px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tourTable">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(165, 153, 137)
+</string>
+          </property>
+          <column>
+           <property name="text">
+            <string>Фото</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Название</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Гид</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="addBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>669</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>11111</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox { 
+     border: 2px solid; 
+	 border-radius: 0px;
+ } </string>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <widget class="QLabel" name="tourNameLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Имя тура</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="tourNameEdit">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                 <property name="text">
+                  <string>Имя тура</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="guideNameLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Имя гида</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="guideNameEdit">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                 <property name="text">
+                  <string>Имя гида</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="guidePhoneLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Номер гида</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="guidePhoneEdit">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                 <property name="text">
+                  <string>Номер гида</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QLabel" name="startDateLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Дата начала</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDateEdit" name="tourStartDate">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="expDateLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Дата окончания</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDateEdit" name="tourExpDate">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QLabel" name="tourPhotoLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(124, 124, 108);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Файл не выбран</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="tourPhotoButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>61</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>61</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 2px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>ФОТО</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="line_7">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(16, 0, 0);</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="placesLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 18pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Места посещения</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="placeNameLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Название</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="placeNameEdit">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                 <property name="text">
+                  <string>Название места посещения</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="hotelLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Отель</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="hotelNameEdit">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                 <property name="text">
+                  <string>Местный отель</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="addressLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Адрес</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="addressNameEdit">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                 <property name="text">
+                  <string>Адрес места</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QLabel" name="placePhotoLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(124, 124, 108);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Файл не выбран</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="placePhotoButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>61</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>61</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 2px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>ФОТО</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QLabel" name="startDateLabel_2">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Дата начала</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDateEdit" name="placeStartDate">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="expDateLabel_2">
+                 <property name="styleSheet">
+                  <string notr="true">font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(15, 4, 0);
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Дата окончания</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDateEdit" name="placeExpDate">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color:	rgb(165, 153, 137);</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="addPlaceButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>151</width>
+                   <height>41</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>151</width>
+                   <height>41</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 3px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>ДОБАВИТЬ МЕСТО</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="addPlacesTable">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(16, 0, 0);
+border: none;
+font: 14pt &quot;Bahnschrift Condensed&quot;;
+color: rgb(165, 153, 137)
+</string>
+               </property>
+               <column>
+                <property name="text">
+                 <string>Фото</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Название</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <item>
+                  <widget class="QPushButton" name="closeAddBoxButton">
+                   <property name="minimumSize">
+                    <size>
+                     <width>21</width>
+                     <height>21</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>21</width>
+                     <height>21</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+	 border: none;
+}
+
+QPushButton:hover{
+	border: 3px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="addTourButton">
+                   <property name="minimumSize">
+                    <size>
+                     <width>121</width>
+                     <height>31</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>121</width>
+                     <height>31</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 3px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>ДОБАВИТЬ ТУР</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <item>
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addButton">
+          <property name="minimumSize">
+           <size>
+            <width>111</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>111</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 3px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+          </property>
+          <property name="text">
+           <string>ДОБАВИТЬ</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteButton">
+          <property name="minimumSize">
+           <size>
+            <width>111</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+     background-color: rgb(195, 98, 2);
+ border: none;
+	color: white;
+	
+	font: 18pt &quot;Bahnschrift Condensed&quot;;
+	/*border-radius:10px;*/
+}
+
+QPushButton:hover{
+	border: 3px outset;
+	border-color: rgb(195, 98, 2);
+}</string>
+          </property>
+          <property name="text">
+           <string>УДАЛИТЬ</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+   <zorder>logoLabel</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>searchResetButton</zorder>
+   <zorder>searchButton</zorder>
+   <zorder>tourSearchNameEdit</zorder>
+   <zorder>tourSearchStartDate</zorder>
+   <zorder>tourSearchExpDate</zorder>
+   <zorder>hardlyCheckBox</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>groupBox</zorder>
+   <zorder></zorder>
+   <zorder></zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1031</width>
+     <width>1148</width>
      <height>21</height>
     </rect>
    </property>
@@ -635,22 +1379,30 @@
     <property name="title">
      <string>Файл</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_2"/>
+    <addaction name="openAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="quitAction"/>
    </widget>
    <addaction name="menu"/>
   </widget>
-  <action name="action">
+  <action name="openAction">
    <property name="text">
     <string>Открыть</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="saveAction">
    <property name="text">
     <string>Сохранить как...</string>
    </property>
   </action>
+  <action name="quitAction">
+   <property name="text">
+    <string>Выйти</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

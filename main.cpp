@@ -7,7 +7,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    Dao *dao = new Dao();
+    Service *service = new Service(*dao);
+    Controller *controller = new Controller(*service);
     MainWindow w;
+    w.setController(*controller);
     w.show();
 
 //qDebug() << "it's alive!!!!!!";
@@ -17,7 +21,7 @@ int main(int argc, char *argv[])
 //    Service *service = new Service(*dao);
 //    Date* date = new Date(1, 1, 1);
 //    Guide* guide = new Guide("Guide guide", "+2281488322");
-////    service->addTour("tour", *date, *date, "Guide", "+2281488322");
+//    service->addTour("tour", *date, *date, "Guide", "+2281488322");
 //    service->addTour("tour", *date, *date, *guide);
 //    Request *request = new Request("tour", *date, *date, *guide);
 //    service->deleteTour(*request);
