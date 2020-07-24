@@ -1,15 +1,24 @@
 #include "service.h"
 
-void Service::addTour(std::string name, Date startDate, Date expDate, std::string guideName, std::string guidePhoneNum){
+void Service::addTour(std::string name, Date startDate, Date expDate, std::string guideName, std::string guidePhoneNum, std::string photoPath){
    Guide* guide = new Guide(guideName, guidePhoneNum);
    Tour* tour = new Tour(name, startDate, expDate, *guide);
+   tour->setPhotoPath(photoPath);
    this->dao->addTour(*tour);
 }
 
-void Service::addTour(std::string name, Date startDate, Date expDate, Guide guide){
+void Service::addTour(std::string name, Date startDate, Date expDate, Guide guide, std::string photoPath){
     Tour* tour = new Tour(name, startDate, expDate, guide);
+    tour->setPhotoPath(photoPath);
     this->dao->addTour(*tour);
 }
+
+void Service::addTour(std::string name, Date startDate, Date expDate, std::string guideName, std::string guidePhone, std::vector<Place> places, std::string photoPath){
+    Tour* tour = new Tour(name, startDate, expDate, guideName, guidePhone, places);
+    tour->setPhotoPath(photoPath);
+    this->dao->addTour(*tour);
+}
+
 void Service::deleteTour(Request request){
     if(this->dao->getTourByRequestHardly(request) != nullptr)
         this->dao->deleteTour(*this->dao->getTourByRequestHardly(request));
@@ -23,7 +32,8 @@ Tour* Service::getTourByRequest(Request request, bool hardly){
     }
 }
 
-std::vector<Tour> Service::getToursByRequest(Request request){
+std::vector<Tour> Service::getToursByRequest(Request request, bool hardly){
+    if (hardly) return this->dao->getToursByRequestHardly(request);
     return this->dao->getToursByRequest(request);
 }
 
@@ -54,6 +64,14 @@ bool Service::save(std::string filepath){
     return true;
 }
 
+Tour* Service::getTourByIndex(int index){
+    return this->dao->getTourByIndex(index);
+}
+
+std::vector<Tour> Service::getTours(){
+    return this->dao->getTours();
+}
+
 bool Service::load(std::string filepath){
     QFile file(QString::fromStdString(filepath));
     if (!file.open(QIODevice::ReadOnly)) return false;
@@ -63,4 +81,6 @@ bool Service::load(std::string filepath){
     return true;
 }
 
-
+void Service::deleteTourByIndex(int index){
+    this->dao->deleteTourByIndex(index);
+}

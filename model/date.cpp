@@ -16,16 +16,4 @@ Date::Date(int day, int month, int year){
 bool Date::operator==(const Date& other) const{
         return (this->day == other.day && this->month && other.month && this->year);
 }
-QDataStream &operator <<(QDataStream &out, Date *date){
-    out << date->day;
-    out << date->month;
-    out << date->year;
-    return out;
-}
 
-QDataStream &operator >>(QDataStream &in, Date *date){
-    in >> date->day;
-    in >> date->month;
-    in >> date->year;
-    return in;
-}

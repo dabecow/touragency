@@ -15,8 +15,6 @@ public:
     int getMonth(){ return this->month; };
     int getYear(){  return this->year;  };
     bool operator==(const Date& other) const;
-    friend QDataStream &operator <<(QDataStream &out, Date *date);
-    friend QDataStream &operator >>(QDataStream &in, Date *date);
 
 };
 

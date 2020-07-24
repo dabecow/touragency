@@ -1,21 +1,21 @@
 #include "place.h"
+#include "QDate"
 
 QDataStream &operator <<(QDataStream &out, Place *place){
     out << QString::fromStdString(place->name);
     out << QString::fromStdString(place->address);
     out << QString::fromStdString(place->hotel);
     out << QString::fromStdString(place->photoPath);
-    out << place->startDate.getDay();
-    out << place->startDate.getMonth();
-    out << place->startDate.getYear();
-    out << place->expirationDate.getDay();
-    out << place->expirationDate.getMonth();
-    out << place->expirationDate.getYear();
+    QDate startDate(place->startDate.getYear(), place->startDate.getMonth(), place->startDate.getDay());
+    QDate expDate(place->expirationDate.getYear(), place->expirationDate.getMonth(), place->expirationDate.getDay());
+    out << startDate;
+    out << expDate;
     return out;
 }
 
 QDataStream &operator >>(QDataStream &in, Place *place){
-    int d1, d2, m1, m2, y1, y2;
+    Date _startDate, _expDate;
+    QDate startDate, expDate;
     QString name, address, hotel, photoPath;
     in >> name;
     in >> address;
@@ -25,9 +25,9 @@ QDataStream &operator >>(QDataStream &in, Place *place){
     place->address = address.toStdString();
     place->hotel = address.toStdString();
     place->photoPath = photoPath.toStdString();
-    in >> d1 >> m1 >> y1 >> d2 >> m2 >> y2;
-    place->startDate = Date(y1, m1, d1);
-    place->expirationDate = Date(y2, m2, d2);
+    in >> startDate >> expDate;
+    place->startDate = Date(startDate.day(), startDate.month(), startDate.year());
+    place->expirationDate = Date(expDate.day(), expDate.month(), expDate.year());
 
     return in;
 }
