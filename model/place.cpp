@@ -1,5 +1,6 @@
 #include "place.h"
 #include "QDate"
+#include "QDebug"
 
 QDataStream &operator <<(QDataStream &out, Place *place){
     out << QString::fromStdString(place->name);
@@ -23,7 +24,7 @@ QDataStream &operator >>(QDataStream &in, Place *place){
     in >> photoPath;
     place->name = name.toStdString();
     place->address = address.toStdString();
-    place->hotel = address.toStdString();
+    place->hotel = hotel.toStdString();
     place->photoPath = photoPath.toStdString();
     in >> startDate >> expDate;
     place->startDate = Date(startDate.day(), startDate.month(), startDate.year());

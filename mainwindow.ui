@@ -96,7 +96,7 @@ background-color: rgb(244, 242, 219);</string>
           <property name="title">
            <string/>
           </property>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
             <rect>
              <x>6</x>
@@ -292,7 +292,7 @@ QPushButton:hover{
           </property>
           <property name="maximumSize">
            <size>
-            <width>500</width>
+            <width>1000</width>
             <height>11111</height>
            </size>
           </property>
@@ -618,6 +618,11 @@ color: rgb(165, 153, 137)
           <column>
            <property name="text">
             <string>Название</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Даты</string>
            </property>
           </column>
           <column>
@@ -1350,20 +1355,6 @@ QPushButton:hover{
      </layout>
     </item>
    </layout>
-   <zorder>logoLabel</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>searchResetButton</zorder>
-   <zorder>searchButton</zorder>
-   <zorder>tourSearchNameEdit</zorder>
-   <zorder>tourSearchStartDate</zorder>
-   <zorder>tourSearchExpDate</zorder>
-   <zorder>hardlyCheckBox</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_3</zorder>
-   <zorder>groupBox</zorder>
-   <zorder></zorder>
    <zorder></zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">

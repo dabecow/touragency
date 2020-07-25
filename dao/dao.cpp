@@ -62,6 +62,10 @@ Tour* Dao::getTourByIndex(int index){
         return &this->tours.at(index);
 }
 
+void Dao::clearDao(){
+    this->tours.clear();
+}
+
 QDataStream &operator <<(QDataStream &out, Dao *dao){
     out << (qint32)dao->tours.size();
     for (size_t i = 0; i < dao->tours.size(); i++){
