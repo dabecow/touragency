@@ -37,18 +37,6 @@ struct Request{
 
 class Tour
 {
-    /*template<class Archive>
-        void serialize(Archive & ar, const unsigned int version)
-        {
-            // serialize base class information
-            ar & boost::serialization::base_object<Tour>(*this);
-            ar & name;
-            ar & startDate;
-            ar & expirationDate;
-            ar & guide;
-            ar & places;
-        }*/
-
     std::string name;
     Date startDate;
     Date expirationDate;

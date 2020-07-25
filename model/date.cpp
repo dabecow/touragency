@@ -22,8 +22,12 @@ std::string Date::toString(){
 }
 
 Date::Date(std::string date){
+    int d, m, y;
     sscanf(date.c_str(), "%2d.%2d.%4d",
-        this->getDay(),
-        this->getMonth(),
-        this->getYear());
+        &d,
+        &m,
+        &y);
+    this->day = d;
+    this->month = m;
+    this->year = y;
 }
