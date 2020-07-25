@@ -21,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->closeTourBoxButton->setIcon(QIcon(":/new/icons/close-symbol-png-1.png"));
     ui->searchButton->setIcon(QIcon(":/new/icons/search-13-512.png"));
     ui->searchResetButton->setIcon(QIcon(":/new/icons/reset.png"));
+    ui->openAction->setIcon(QIcon(":/new/icons/icons8-happy-file-96.png"));
+    ui->saveAction->setIcon(QIcon(":/new/icons/diskette.png"));
+    ui->quitAction->setIcon(QIcon(":/new/icons/icons8-close-window-96.png"));
 }
 
 MainWindow::~MainWindow()
@@ -58,7 +61,6 @@ void MainWindow::resetEdits(){
     ui->tourBox->setVisible(false);
     ui->addButton->setVisible(true);
     ui->deleteButton->setVisible(true);
-    this->tmpPlaces.clear();
     ui->addPlacesTable->clear();
     ui->tourSearchNameEdit->clear();
 }
@@ -105,12 +107,6 @@ void MainWindow::on_addPlaceButton_clicked()
 
 void MainWindow::renderAddPlacesTable(){
 
-    QFont font;
-    font.setFamily("Tahoma");
-    font.setBold(true);
-
-    ui->addPlacesTable->setFont(font);
-
     ui->addPlacesTable->setRowCount(tmpPlaces.length());
     ui->addPlacesTable->setIconSize(QSize(100, 100));
     QTableWidgetItem *icon_item = new QTableWidgetItem[tmpPlaces.length()];
@@ -133,13 +129,9 @@ void MainWindow::renderAddPlacesTable(){
 }
 
 void MainWindow::renderTourTable(){
-    QFont font;
-    font.setFamily("Tahoma");
-    font.setBold(true);
-
-    ui->tourTable->setFont(font);
 
     std::vector<Tour> tours = this->controller->getTours();
+
 
     ui->tourTable->setRowCount(tours.size());
     ui->tourTable->setIconSize(QSize(200, 400));
@@ -157,7 +149,8 @@ void MainWindow::renderTourTable(){
         }
         ui->tourTable->setItem(i, 0, new QTableWidgetItem(icon_item[i]));
         ui->tourTable->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(tours[i].getName())));
-        ui->tourTable->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(tours[i].getGuide().getName() + ' ' + tours[i].getGuide().getPhoneNumber())));
+        ui->tourTable->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(tours[i].getStartDate().toString() + " - " + tours[i].getExpirationDate().toString())));
+        ui->tourTable->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(tours[i].getGuide().getName() + ' ' + tours[i].getGuide().getPhoneNumber())));
     }
     ui->tourTable->resizeRowsToContents();
     ui->tourTable->resizeColumnsToContents();
@@ -200,6 +193,8 @@ void MainWindow::on_addTourButton_clicked()
         this->resetEdits();
         this->renderTourTable();
     }
+    this->tmpPlaces.clear();
+
 }
 
 void MainWindow::on_deleteButton_clicked()
@@ -219,21 +214,22 @@ void MainWindow::on_deleteButton_clicked()
 
 void MainWindow::on_tourTable_cellClicked(int row)
 {
-    ui->placesViewTable->setCurrentCell(0, 0);
+    ui->placesViewTable->setRowCount(0);
+    Tour *tour = this->controller->getTourByRequest(ui->tourTable->item(row, 1)->data(Qt::DisplayRole).toString(), ui->tourTable->item(row, 2)->data(Qt::DisplayRole).toString());
+//    ui->placesViewTable->setCurrentCell(0, 0);
     ui->tourBox->setVisible(true);
-    std::vector<Tour> tours = this->controller->getTours();
-    ui->tourNameEditLabel->setText(QString::fromStdString(tours.at(row).getName()));
-    ui->guideNameEditLabel->setText(QString::fromStdString(tours.at(row).getGuide().getName()));
-    ui->guidePhoneEditLabel->setText(QString::fromStdString(tours.at(row).getGuide().getPhoneNumber()));
-    Date startDate = tours.at(row).getStartDate();
-    Date expDate = tours.at(row).getExpirationDate();
+    ui->tourNameEditLabel->setText(QString::fromStdString(tour->getName()));
+    ui->guideNameEditLabel->setText(QString::fromStdString(tour->getGuide().getName()));
+    ui->guidePhoneEditLabel->setText(QString::fromStdString(tour->getGuide().getPhoneNumber()));
+    Date startDate = tour->getStartDate();
+    Date expDate = tour->getExpirationDate();
 
     QDate _startDate(startDate.getYear(), startDate.getMonth(), startDate.getDay());
     QDate _expDate(expDate.getYear(), expDate.getMonth(), expDate.getDay());
     qDebug() << _startDate.toString(Qt::ISODate);
     ui->tourDatesEditLabel->setText(_startDate.toString(Qt::ISODate) + " - " + _expDate.toString(Qt::ISODate));
 
-    QString tourPhotoPath = QString::fromStdString(tours[row].getPhotoPath());
+    QString tourPhotoPath = QString::fromStdString(tour->getPhotoPath());
     QFileInfo fileInfo(tourPhotoPath);
 
     if (fileInfo.exists()){
@@ -241,18 +237,8 @@ void MainWindow::on_tourTable_cellClicked(int row)
     } else {
         ui->tourPhotoEditLabel->setPixmap(QIcon(":/new/icons/no_photo.png").pixmap(100, 100));
     }
-
-    QFont font;
-    font.setFamily("Tahoma");
-    font.setBold(true);
-
-    ui->tourNameEditLabel->setFont(font);
-    ui->uselessGuideLabel->setFont(font);
-    ui->datesUselessLabel->setFont(font);
-    ui->tourStartDateView->setFont(font);
-    ui->placesViewTable->setFont(font);
-
-    std::vector<Place> places = tours.at(row).getPlaces();
+    ui->placesViewTable->setRowCount(0);
+    std::vector<Place> places = tour->getPlaces();
 
     ui->placesViewTable->setRowCount(places.size());
     ui->placesViewTable->setIconSize(QSize(200, 200));
@@ -296,7 +282,9 @@ void MainWindow::on_closeAddBoxButton_clicked()
 
 void MainWindow::on_placesViewTable_cellClicked(int row)
 {
-    Place* place = this->controller->getTour(ui->tourTable->currentRow())->getPlaceByIndex(row);
+
+    Tour *tour = this->controller->getTourByRequest(ui->tourTable->item(ui->tourTable->currentRow(), 1)->data(Qt::DisplayRole).toString(), ui->tourTable->item(ui->tourTable->currentRow(), 2)->data(Qt::DisplayRole).toString());
+    Place* place = tour->getPlaceByIndex(row);
     ui->placeNameEditLabel->setText(QString::fromStdString(place->getName()));
     ui->placeAddressEditLabel->setText(QString::fromStdString(place->getAddress()));
     ui->placeHotelEditLabel->setText(QString::fromStdString(place->getHotel()));
@@ -326,9 +314,10 @@ void MainWindow::on_searchResetButton_clicked()
 
 void MainWindow::on_searchButton_clicked()
 {
+
     std::vector<Tour> tours = this->controller->manageSearchRequest(ui->tourSearchNameEdit->text(), ui->tourSearchStartDate->date(), ui->tourSearchExpDate->date(), ui->hardlyCheckBox->isChecked());
 
-
+    ui->tourTable->setRowCount(0);
     ui->tourTable->setRowCount(tours.size());
     ui->tourTable->setIconSize(QSize(200, 400));
     QTableWidgetItem *icon_item = new QTableWidgetItem[tours.size()];
@@ -345,10 +334,13 @@ void MainWindow::on_searchButton_clicked()
         }
         ui->tourTable->setItem(i, 0, new QTableWidgetItem(icon_item[i]));
         ui->tourTable->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(tours[i].getName())));
-        ui->tourTable->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(tours[i].getGuide().getName() + ' ' + tours[i].getGuide().getPhoneNumber())));
+        ui->tourTable->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(tours[i].getStartDate().toString() + " - " + tours[i].getExpirationDate().toString())));
+
+        ui->tourTable->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(tours[i].getGuide().getName() + ' ' + tours[i].getGuide().getPhoneNumber())));
     }
     ui->tourTable->resizeRowsToContents();
     ui->tourTable->resizeColumnsToContents();
+//    resetEdits();
 }
 
 void MainWindow::on_openAction_triggered()
@@ -366,8 +358,10 @@ void MainWindow::on_openAction_triggered()
                                           "Не удалось открыть",
                                           QMessageBox::Ok);
         } else {
-            this->renderTourTable();
+            this->controller->clearDao();
+            this->controller->load(qfileName);
             this->resetEdits();
+            this->renderTourTable();
         }
     }
 }

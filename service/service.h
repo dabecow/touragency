@@ -29,7 +29,7 @@ public:
     bool save(std::string filepath);
     bool load(std::string filepath);
     std::vector<Tour> getTours();
-
+    void clearDao();
 
 };
 

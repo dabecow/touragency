@@ -81,6 +81,10 @@ bool Service::load(std::string filepath){
     return true;
 }
 
+void Service::clearDao(){
+    this->dao->clearDao();
+}
+
 void Service::deleteTourByIndex(int index){
     this->dao->deleteTourByIndex(index);
 }

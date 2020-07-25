@@ -27,8 +27,19 @@ std::vector<Tour> Controller::getTours(){
     return this->service->getTours();
 }
 
-Tour* Controller::getTour(int index){
+Tour* Controller::getTourByIndex(int index){
     return this->service->getTourByIndex(index);
+}
+
+Tour* Controller::getTourByRequest(QString name, QString dates){
+    QStringList pieces = dates.split( " - " );
+    QString startDate = pieces.at(0);
+    QString expDate = pieces.at(1);
+    int d1, m1, y1, d2, m2, y2;
+    std::sscanf(startDate.toStdString().c_str(), "%d.%d.%d", &d1, &m1, &y1);
+    std::sscanf(expDate.toStdString().c_str(), "%d.%d.%d", &d2, &m2, &y2);
+    Request request(name.toStdString(), Date(d1, m1, y1), Date(d2, m2, y2));
+    return this->service->getTourByRequest(request, true);
 }
 
 void Controller::deleteTourByIndex(int index){
@@ -38,6 +49,10 @@ void Controller::deleteTourByIndex(int index){
 std::vector<Tour> Controller::manageSearchRequest(QString name, QDate startDate, QDate expDate, bool hardly){
    Request request(name.toStdString(), Date(startDate.day(), startDate.month(), startDate.year()), Date(expDate.day(), expDate.month(), expDate.year()));
    return this->service->getToursByRequest(request, hardly);
+}
+
+void Controller::clearDao(){
+    this->service->clearDao();
 }
 
 bool Controller::save(QString filePath){

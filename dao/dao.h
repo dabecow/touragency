@@ -25,7 +25,7 @@ public:
     Tour* getTourByRequestHardly(Request request);
     std::vector<Tour> getToursByRequest(Request request);
     std::vector<Tour> getToursByRequestHardly(Request request);
-
+    void clearDao();
 
 };
 #endif // DAO_H
